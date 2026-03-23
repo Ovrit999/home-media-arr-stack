@@ -1,4 +1,4 @@
-# 🎬 Home Media Arr Stack Server
+# Home Media Arr Stack Server
 
 A self-hosted home media server built on an HP Z800 workstation running TrueNAS SCALE. This project uses Docker containers managed through Dockge to run a full "Arr stack" — a suite of applications that automate media management and streaming.
 
@@ -6,7 +6,7 @@ A self-hosted home media server built on an HP Z800 workstation running TrueNAS 
 
 ---
 
-## 🖥️ Hardware
+## Hardware
 
 | Component | Details |
 |-----------|---------|
@@ -24,7 +24,7 @@ A self-hosted home media server built on an HP Z800 workstation running TrueNAS 
 
 ---
 
-## 💡 Project Philosophy — Budget Build
+## Project Philosophy — Budget Build
 
 This entire server was built using **recycled and spare hardware** — an old HP Z800 workstation that hadn't been used in years, paired with spare hard drives that were sitting around unused. The goal was to prove that you don't need expensive, brand-new equipment to run a fully functional, reliable home media server.
 
@@ -41,7 +41,7 @@ The Storage pool intentionally uses **mismatched drive sizes** (465 GiB + 298 Gi
 
 ---
 
-## 💾 Storage Layout (TrueNAS SCALE)
+## Storage Layout (TrueNAS SCALE)
 
 Two ZFS datasets are configured, both with **mirrored drives for redundancy**:
 
@@ -55,7 +55,7 @@ Both datasets use mirrored drives, meaning data is written to two drives simulta
 
 ---
 
-## 🐳 Stack Overview
+## Stack Overview
 
 All services run as Docker containers managed by **Dockge** — a modern Docker Compose manager with a web UI.
 
@@ -94,7 +94,7 @@ Bazarr (adds subtitles automatically)
 
 ---
 
-## 🔒 Security & VPN
+## Security & VPN
 
 All download traffic is routed through **AirVPN** via a **WireGuard tunnel** built directly into the qBittorrent container. This means no downloads happen without VPN protection — if the VPN drops, the container loses internet access entirely.
 
@@ -122,7 +122,7 @@ The actual AirVPN credentials are stored in a WireGuard config file (`wg0.conf`)
 
 ---
 
-## 📄 What is a Docker Compose File?
+## What is a Docker Compose File?
 
 The `compose.yaml` file is written in **YAML** (Yet Another Markup Language) — not Bash. It's a configuration file that tells Docker:
 
@@ -145,7 +145,7 @@ The `8096:8096` port mapping means: *"expose the container's internal port 8096 
 
 ---
 
-## 📦 compose.yaml
+## compose.yaml
 
 ```yaml
 services:
@@ -300,7 +300,7 @@ networks: {}
 
 ---
 
-## 🛡️ Data Protection
+## Data Protection
 
 Even on a budget build, data protection was taken seriously. TrueNAS automates several layers of protection:
 
@@ -331,7 +331,7 @@ S.M.A.R.T. tests monitor physical drive health and catch early signs of failure 
 
 ---
 
-## 📚 Resources & References
+## Resources & References
 
 - [TrueNAS SCALE Documentation](https://www.truenas.com/docs/scale/)
 - [Jellyfin Documentation](https://jellyfin.org/docs/)
@@ -344,7 +344,7 @@ S.M.A.R.T. tests monitor physical drive health and catch early signs of failure 
 
 ---
 
-## 🧠 What I Learned
+## What I Learned
 
 - How to install and configure **TrueNAS SCALE** on server hardware
 - Setting up **ZFS datasets** with mirroring for data redundancy
@@ -357,7 +357,7 @@ S.M.A.R.T. tests monitor physical drive health and catch early signs of failure 
 
 ---
 
-## 🚧 Future Plans
+## Future Plans
 
 - [ ] Set up remote access (Tailscale or Cloudflare Tunnel)
 - [ ] Add Heimdall or Homarr as a dashboard
