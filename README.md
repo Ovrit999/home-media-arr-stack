@@ -331,6 +331,29 @@ S.M.A.R.T. tests monitor physical drive health and catch early signs of failure 
 
 ---
 
+## Screenshots
+
+**TrueNAS Dashboard**
+![TrueNAS Dashboard](05_truenas_dashboard.png)
+
+**Storage Datasets**
+![Storage Datasets](02_truenas_datasets.png)
+
+**Running Containers (Dockge)**
+![Containers Part 1](03_dockge_containers_1.png)
+![Containers Part 2](04_dockge_containers_2.png)
+
+**Disk Layout (serial numbers redacted)**
+![Disk Layout](06_truenas_disks_redacted.png)
+
+**Data Protection**
+![Data Protection](07_data_protection.png)
+
+**S.M.A.R.T. Tests**
+![SMART Tests](08_smart_tests.png)
+
+---
+
 ## Resources & References
 
 - [TrueNAS SCALE Documentation](https://www.truenas.com/docs/scale/)
