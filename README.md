@@ -399,9 +399,42 @@ S.M.A.R.T. tests monitor physical drive health and catch early signs of failure 
 
 ---
 
+## Remote Access — Tailscale
+
+After getting the server running locally, the next step was setting up remote access so the media server could be accessed from anywhere — not just at home.
+
+**Tailscale** was chosen for this because it is free for personal use, extremely easy to set up, and does not require any port forwarding or firewall configuration. It creates a private encrypted network between your devices using the WireGuard protocol under the hood.
+
+### How it was set up
+
+1. Created a free Tailscale account at tailscale.com using a personal GitHub account
+2. Installed the Tailscale app directly from the TrueNAS SCALE Apps section (no command line needed)
+3. Generated an auth key from the Tailscale admin panel and pasted it into the TrueNAS app installer
+4. Installed the Tailscale app on a personal phone and logged in with the same account
+
+Once both devices were connected, the TrueNAS server was accessible from anywhere via its private Tailscale IP address.
+
+### Result
+
+Jellyfin is now fully accessible remotely. Services can be reached from any device that has Tailscale installed by navigating to the server's Tailscale IP address and the appropriate port — for example, Jellyfin at port 8096.
+
+### Tailscale vs Cloudflare Tunnel
+
+| Feature | Tailscale | Cloudflare Tunnel |
+|---------|-----------|------------------|
+| Requires app on device | Yes | No |
+| Works on smart TVs | No | Yes |
+| Security | Very high | High |
+| Cost | Free | Free |
+| Setup difficulty | Easy | Moderate |
+
+Tailscale is ideal for personal devices. For access on devices you do not control (smart TVs, etc.), a Cloudflare Tunnel setup is planned as a future addition.
+
+---
+
 ## Future Plans
 
-- [ ] Set up remote access (Tailscale or Cloudflare Tunnel)
+- [ ] Set up Cloudflare Tunnel for access on smart TVs and devices without Tailscale
 - [ ] Add Heimdall or Homarr as a dashboard
 - [ ] Learn to write Docker Compose files from scratch
 - [ ] Add monitoring with Uptime Kuma
